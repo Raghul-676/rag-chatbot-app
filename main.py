@@ -42,7 +42,4 @@ async def rag_query(req: QueryRequest, api_key: str = Depends(get_api_key)):
 async def root():
     return {"message": "Welcome to RAG API. Use POST /rag-query"}
 
-if __name__ == "__main__":
-    import uvicorn
-    port = int(os.getenv("PORT", 8000))  # 8000 for local dev, Render injects PORT in production
-    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
+
